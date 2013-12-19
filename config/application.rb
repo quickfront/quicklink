@@ -8,6 +8,8 @@ Bundler.require(:default, Rails.env)
 
 module Quicklink
   class Application < Rails::Application
+    config.i18n.default_locale = 'pt-BR'
+    config.time_zone = 'Brasilia'
     Slim::Engine.set_default_options format: :html5
     
     config.generators do |g|
@@ -15,7 +17,6 @@ module Quicklink
       g.helper            false
       g.test_framework    nil
     end
-    
     
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
